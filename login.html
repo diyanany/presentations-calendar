@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>
+        Login Page
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='styles/styles.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+    <div class="top_nav">
+        <img src="images/logo.png" alt="logo"/>
+        <a class="active" href="signup.html">Sign Up</a>
+        <a href="login.html">Log In</a>
+        <a href="src/calendar.php">Go to Calendar</a>
+        <a href="src/home.php">Home</a>
+    </div>
+    
+    <main>
+        <section>
+            <div class="login">
+                <form action="src/authenticate.php" method="POST" id="login_form" class="form">
+                    <img id="img" src="images/login.png" alt="signup"/>
+                    <input class="inp_form" id="identity" type="text" name="identity" placeholder="Identity*">
+                    <input class="inp_form" id="password" type="password" name="password" placeholder="Password*">
+                    <input id="btn_login" class="inp_login" type="submit" value="Login">
+                </form>
+            </div>
+        </section>
+    </main>
+</header>
+</body>
+</html>

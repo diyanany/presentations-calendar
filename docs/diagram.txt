@@ -1,0 +1,29 @@
+@startuml
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/master/dist
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/EndUserComputing/all.puml
+!includeurl AWSPuml/General/User.puml
+!includeurl AWSPuml/General/Multimedia.puml
+!includeurl AWSPuml/DeveloperTools/CodeCommit.puml
+!includeurl AWSPuml/Compute/EC2.puml
+!includeurl AWSPuml/Database/RDS.puml
+!includeurl AWSPuml/Compute/EC2Instances.puml
+!includeurl AWSPuml/Compute/EC2AMI.puml
+
+User(user, "Student", "Course aws02, prof d-r Milen Petrov")
+Multimedia(media, "Project Intro", "Videos", "Course aws02, prof d-r Milen Petrov")
+WorkDocs(documents, "LaTeX Documentation", "AWS EC2, AWS RDS, CodeCommit", "Course aws02, prof d-r Milen Petrov")
+CodeCommit(CodeCommit, "Working with Git", "CodeCommit", "Source code repository")
+EC2(EC2, "Runing PHP Apache server", "Elastic Compute Cloud", "Opens Presentations Calendar (PC) Web app")
+RDS(RDS, "Connecting to MySQL RDS instance", "Relational Database Sevice RDS (MariaDB)", "Validating User credentials and add new Presentations")
+EC2Instances(EC2Instances, "Multiple instances with the same configuration", "Elastic Compute Cloud Instances")
+EC2AMI(EC2AMI, "Providing the information required to launch a instance", "Amazon Machine Image")
+
+user --> media
+media --> documents
+documents -> EC2: Internet Connection
+EC2 <-> RDS
+CodeCommit --> EC2 
+EC2 --> EC2AMI
+EC2AMI --> EC2Instances
+@enduml
